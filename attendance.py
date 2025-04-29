@@ -62,7 +62,7 @@ class Attendance:
         left_frame=LabelFrame(main_frame,bd=2,relief=RIDGE,text="Student Attendance Details",font=("Times new roman",15,"bold"),bg="white",fg="black")
         left_frame.place(x=10,y=5,width=615,height=390)
 
-       
+    
 
         img_left1 = Image.open(r"Images\scan.jpg")
         img_left1 = img_left1.resize((608, 120), Image.LANCZOS)
@@ -71,7 +71,7 @@ class Attendance:
         f_lbl = Label(left_frame, image=self.photoimg_left)
         f_lbl.place(x=2, y=0, width=608, height=120)
 
-          
+    
         left_inside_frame=LabelFrame(main_frame,bd=2,relief=RIDGE,text="Student Details",font=("Times new roman",15,"bold"),bg="white",fg="black")
         left_inside_frame.place(x=10 ,y=130,width=616,height=230)
 
@@ -204,10 +204,10 @@ class Attendance:
        with open(fln) as myfile:
           csvread=csv.reader(myfile,delimiter=",")
           for i in csvread:
-             mydata.append(i)
+            mydata.append(i)
         
           self.fetchData(mydata)
-                     
+                    
 # #export csv
     
        
@@ -219,7 +219,7 @@ class Attendance:
 
         # Open file dialog
         fln = filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save CSV",
-                                           filetypes=(("CSV File", "*.csv"), ("All Files", "*.*")), parent=self.root)
+                            filetypes=(("CSV File", "*.csv"), ("All Files", "*.*")), parent=self.root)
         if fln:  # Check if filename is selected
             with open(fln, mode="w", newline="") as myfile:
                 exp_write = csv.writer(myfile, delimiter=",")  # Use comma as the delimiter
